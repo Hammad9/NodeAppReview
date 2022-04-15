@@ -7,7 +7,9 @@ const router = express.Router();
 
 router.get('/',(req,res)=>{
     // res.send('Login')
-    res.render('login')   //here we call file of login which is in view
+    res.render('login',{
+        layout:'login'
+    })   //here we call file of login which is in view
 })
 
 
