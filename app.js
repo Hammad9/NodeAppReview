@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const connectDb=require('./config/db')
 const morgan=require('morgan')   //middle ware use for login etc
 const exphbs=require('express-handlebars')
+const path=require('path')
 
 // Load config
 dotenv.config({ path: './config/config.env' })
@@ -24,6 +25,9 @@ if(process.env.NODE_ENV === 'development'){
 app.engine('.hbs',exphbs.engine({defaultLayout:'main', extname:'.hbs'}))
 app.set('view engine','.hbs')
 
+
+// Path of Static Folder
+app.use(express.static(path.join(__dirname,'public')))   //__dirname is current directory and using join join with public folder
 
 // Routes from index.js 
 app.use('/',require('./routes/index'))

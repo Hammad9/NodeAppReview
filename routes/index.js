@@ -6,7 +6,8 @@ const router = express.Router();
 //@route Get/
 
 router.get('/',(req,res)=>{
-    res.send('Login')
+    // res.send('Login')
+    res.render('login')   //here we call file of login which is in view
 })
 
 
@@ -14,7 +15,8 @@ router.get('/',(req,res)=>{
 //@route Get/ DashBoard
 
 router.get('/dashboard',(req,res)=>{
-    res.send('DashBoard')
+    // res.send('DashBoard')
+    res.render('dashboard')   //Here we call file of Dashboard
 })
 
 
